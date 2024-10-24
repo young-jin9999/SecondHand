@@ -12,15 +12,15 @@
         <th>상품명</th>
         <th>가격</th>
         <th>이미지</th>
-        <th>설명</th>
         <th>작업</th>
     </tr>
     <th:block th:each="item : ${items}">
         <tr>
-            <td th:text="${item.title}"></td>
+            <td>
+                <a th:href="@{/item/detail/{id}(id=${item.id})}" th:text="${item.title}">상품명</a>
+            </td>
             <td th:text="${item.price}"></td>
             <td><img th:src="${item.imgURL}" alt="상품 이미지" width="100"></td>
-            <td th:text="${item.desc}"></td>
             <td>
                 <form action="/item/delete" method="post">
                     <input type="hidden" name="id" th:value="${item.id}"/>

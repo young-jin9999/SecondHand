@@ -5,6 +5,7 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Data
 @Entity
@@ -21,4 +22,9 @@ public class Item {
 
     @CreationTimestamp
     private LocalDateTime uploadDate;   // 등록 날짜
+
+    public String getFormattedUploadDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        return uploadDate.format(formatter);
+    }
 }
