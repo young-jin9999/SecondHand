@@ -22,10 +22,11 @@
             <td th:text="${item.price}"></td>
             <td><img th:src="${item.imgURL}" alt="상품 이미지" width="100"></td>
             <td>
-                <form action="/item/delete" method="post">
+                <form action="/item/delete" method="post" style="display:inline;">
                     <input type="hidden" name="id" th:value="${item.id}"/>
                     <button type="submit">삭제</button>
                 </form>
+                <a th:href="@{/item/edit/{id}(id=${item.id})}">수정</a> <!-- 수정 버튼 추가 -->
             </td>
         </tr>
     </th:block>

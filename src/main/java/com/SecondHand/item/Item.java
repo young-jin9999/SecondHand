@@ -14,7 +14,8 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;    // 고유ID
     private String title;   // 상품명
-    private Integer price;  // 가격
+    private Integer price;  // 가격]
+
     private String imgURL;  // 이미지
 
     @Column(name = "`desc`")
